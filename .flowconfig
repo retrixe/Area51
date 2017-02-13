@@ -1,8 +1,8 @@
 [ignore]
-.meteor/**/*
-node_modules/**/*
+.*/.meteor/.*
 [include]
 
 [libs]
 
 [options]
+emoji=true

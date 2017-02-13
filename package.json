@@ -8,19 +8,20 @@
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
-    "material-ui": "^0.16.7",
+    "material-ui": "^0.17.0",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.16.49",
-    "@types/react": "^15.0.8",
+    "@types/material-ui": "^0.16.50",
+    "@types/react": "^15.0.9",
     "@types/react-dom": "^0.14.23",
     "@types/react-tap-event-plugin": "^0.0.30",
     "ava": "^0.18.1",
-    "babel-preset-babili": "^0.0.10",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-babili": "0.0.10",
     "babel-preset-env": "^1.1.8",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
@@ -30,6 +31,6 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
-    "flow-bin": "^0.38.0"
+    "flow-bin": "^0.39.0"
   }
 }

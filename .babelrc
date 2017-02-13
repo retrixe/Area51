@@ -1,9 +1,9 @@
 {
-  "presets": ["react", "stage-0", "babili", ["env", {
+  "presets": ["react", ["env", {
     "targets": {
       "browsers": [
         "Firefox > 35"
       ]
     }
-  }]]
+  }], "stage-0", "babili"]
 }
