@@ -1,0 +1,8 @@
+[ignore]
+.meteor/**/*
+node_modules/**/*
+[include]
+
+[libs]
+
+[options]

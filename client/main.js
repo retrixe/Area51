@@ -13,7 +13,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from "mat
 // Injecting onTouchTap.
 injectTapEventPlugin();
 
-export default class App extends React.Component {
+export default class App extends React.Component() {
   constructor(props) {
     super(props);
 
@@ -23,26 +23,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.show) {
-      return (
-        <MuiThemeProvider>
-          <div>
-            <RaisedButton label="Click Me!"
-             onTouchTap={() => this.setState({show: false})} primary={true} />
-            <Card>
-              <CardText>Hello, world!</CardText>
-            </Card>
-          </div>
-        </MuiThemeProvider>
-      );
-    } else {
-      return (
-        <MuiThemeProvider>
-          <RaisedButton label="Click Me!"
-           onTouchTap={() => this.setState({show: true})} primary={true} />
-        </MuiThemeProvider>
-      );
-    }
+    return (
+      <MuiThemeProvider>
+        <div>
+        </div>
+      </MuiThemeProvider>
+    );
   }
 }
 
