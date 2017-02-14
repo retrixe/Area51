@@ -2,19 +2,17 @@
 import React from "react";
 /* eslint-disable no-unused-vars */
 // Importing material-ui components.
-import { List, ListItem } from "material-ui/List";
+import List from "material-ui/List/List";
 
-// Importing icons.
-import FileIcon from "material-ui/svg-icons/editor/insert-drive-file";
-import FolderIcon from "material-ui/svg-icons/file/folder";
+// Importing the ListCreator.
+import ListCreator from "./ListCreator";
 /* eslint-enable no-unused-vars */
 
 export default class File extends React.Component {
   render() {
     return (
       <List>
-        <ListItem primaryText="Folder" leftIcon={<FolderIcon />} />
-        <ListItem primaryText="File" leftIcon={<FileIcon />} />
+        <ListCreator />
       </List>
     );
   }
