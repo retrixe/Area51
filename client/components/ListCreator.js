@@ -10,11 +10,17 @@ import FolderIcon from "material-ui/svg-icons/file/folder";
 /* eslint-enable no-unused-vars */
 
 export default class ListCreator extends React.Component {
+  constructor(props: {}) {
+    super(props);
+  }
+
   render() {
     return (
       <blabla>
-        <ListItem primaryText="Folder" leftIcon={<FolderIcon />} />
-        <ListItem primaryText="File" leftIcon={<FileIcon />} />
+        <ListItem onClick={this.props.onItemClick}
+         primaryText="Folder" leftIcon={<FolderIcon />} />
+        <ListItem onClick={this.props.onItemClick}
+         primaryText="File" leftIcon={<FileIcon />} />
       </blabla>
     );
   }

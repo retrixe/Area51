@@ -1,5 +1,10 @@
 // @flow
 import React from "react";
+// Importing redux + react-redux and actions.
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { updateCurrentFolder } from "../actions/index";
+
 /* eslint-disable no-unused-vars */
 // Importing material-ui components.
 import List from "material-ui/List/List";
@@ -8,12 +13,18 @@ import List from "material-ui/List/List";
 import ListCreator from "./ListCreator";
 /* eslint-enable no-unused-vars */
 
-export default class File extends React.Component {
+class File extends React.Component {
   render() {
     return (
       <List>
-        <ListCreator />
+        <ListCreator onItemClick={this.props.updateCurrentFolder} />
       </List>
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ updateCurrentFolder }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(File);
