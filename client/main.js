@@ -15,7 +15,6 @@ import Folder from "./components/Folder";
 // Importing redux.
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import ReduxPromise from "redux-promise";
 import reducers from "./reducers";
 /* eslint-enable no-unused-vars */
 
@@ -23,7 +22,7 @@ import reducers from "./reducers";
 injectTapEventPlugin();
 
 // Setting up redux.
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 // Final class.
 export default class App extends React.Component<void, Object, any> {
