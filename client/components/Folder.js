@@ -10,10 +10,10 @@ import { updateCurrentFolder } from "../actions/index";
 import List from "material-ui/List/List";
 
 // Importing the ListCreator.
-import ListCreator from "./ListCreator";
+import ListCreator from "../../imports/ui/components/ListCreator";
 /* eslint-enable no-unused-vars */
 
-class File extends React.Component {
+class Folder extends React.Component {
   render() {
     return (
       <List>
@@ -27,4 +27,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ updateCurrentFolder }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(File);
+export default connect(null, mapDispatchToProps)(Folder);

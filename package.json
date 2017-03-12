@@ -7,34 +7,33 @@
     "lint": "eslint -c .eslintrc.js client/*.js* server/*.js*"
   },
   "dependencies": {
-    "babel-runtime": "^6.22.0",
+    "babel-runtime": "^6.23.0",
     "material-ui": "^0.17.0",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.2",
+    "react-redux": "^5.0.3",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.16.50",
-    "@types/meteor": "^1.3.31",
-    "@types/react": "^15.0.9",
+    "@types/material-ui": "^0.16.57",
+    "@types/meteor": "^1.4.1",
+    "@types/react": "^15.0.16",
     "@types/react-dom": "^0.14.23",
-    "@types/react-redux": "^4.4.36",
+    "@types/react-redux": "^4.4.37",
     "@types/react-tap-event-plugin": "^0.0.30",
-    "ava": "^0.18.1",
+    "ava": "^0.18.2",
     "babel-eslint": "^7.1.1",
-    "babel-preset-babili": "0.0.11",
-    "babel-preset-env": "^1.1.8",
-    "babel-preset-react": "^6.22.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "eslint": "^3.15.0",
+    "babel-register": "^6.23.0",
+    "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "flow-bin": "^0.39.0"
+    "eslint-plugin-react": "^6.10.0",
+    "flow-bin": "^0.41.0"
   }
 }
