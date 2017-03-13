@@ -5,6 +5,10 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { updateCurrentFolder } from "../actions/index";
 
+// Importing meteor (to read a JSON file -.-)
+// flow-disable-next-line
+import { Meteor } from "meteor/meteor";
+
 /* eslint-disable no-unused-vars */
 // Importing material-ui components.
 import List from "material-ui/List/List";
@@ -14,10 +18,15 @@ import ListCreator from "../../imports/ui/components/ListCreator";
 /* eslint-enable no-unused-vars */
 
 class Folder extends React.Component {
+  componentDidMount() {
+    // Fix this later
+    // const originalFolder = JSON.parse();
+  }
+
   render() {
     return (
       <List>
-        <ListCreator onItemClick={this.props.updateCurrentFolder} />
+        <ListCreator onItemClick={() => this.props.updateCurrentFolder} />
       </List>
     );
   }

@@ -1,5 +1,8 @@
 import { Meteor } from "meteor/meteor";
+import fs from "fs";
 
-Meteor.startup(() => {
-  // code to run on server at startup
+Meteor.methods({
+  readFolder: function(folder) {
+    return fs.readdirSync(folder);
+  }
 });
