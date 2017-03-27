@@ -19,18 +19,6 @@ import ListCreator from "../../imports/ui/components/ListCreator";
 /* eslint-enable no-unused-vars */
 
 class Folder extends React.Component<any, any, any> {
-  componentDidMount() {
-    this.state = {
-      //folderContents: Meteor.call("readFolder", JSON.parse("settings.json"), function(error, result) {
-      //  if (error) {
-      //    return error;
-      //  } else {
-      //    return result;
-      //  }
-      //})
-    };
-  }
-
   render() {
     return (
       <List>
