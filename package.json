@@ -1,15 +1,15 @@
 {
   "name": "Area51",
-  "version": "1.0.0",
+  "version": "1.0-beta",
   "private": true,
   "scripts": {
-    "start": "meteor run",
-    "lint": "eslint -c .eslintrc.js client/*.js* server/*.js*"
+    "dev": "next",
+    "start": "next start",
+    "build": "next build",
+    "lint": "eslint"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0",
     "material-ui": "^0.17.0",
-    "meteor-node-stubs": "~0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@types/material-ui": "^0.16.57",
-    "@types/meteor": "^1.4.1",
     "@types/react": "^15.0.16",
     "@types/react-dom": "^0.14.23",
     "@types/react-redux": "^4.4.37",
