@@ -6,6 +6,7 @@
         "Chrome > 41"
       ],
       "node": 4
-    }
+    },
+    "imports": false
   }], "stage-0"]
 }
