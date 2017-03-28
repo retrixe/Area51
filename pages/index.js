@@ -1,9 +1,11 @@
 // @flow
 // This can be likened to a index.html.
+// For the main code, go to ../imports/main.js
+// This will soon be merged with main.js.
 
 /* eslint-disable no-unused-vars */
-import App from "./main";
-import Head from "next/Head";
+import App from "../imports/main";
+import Head from "next/head";
 /* eslint-enable no-unused-vars */
 
 // CSS here.

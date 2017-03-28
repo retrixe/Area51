@@ -1,4 +1,5 @@
 // @flow
+/* eslint-env node */
 import React from "react";
 // Importing redux + react-redux and actions.
 import { bindActionCreators } from "redux";
@@ -10,15 +11,10 @@ import { updateCurrentFolder } from "../actions/index";
 import List from "material-ui/List/List";
 
 // Importing the ListCreator.
-import ListCreator from "./reusable/ListCreator";
+import ListCreator from "../ui/ListCreator";
 /* eslint-enable no-unused-vars */
 
-class Folder extends React.Component {
-  componentDidMount() {
-    // Fix this later
-    // const originalFolder = JSON.parse();
-  }
-
+class Folder extends React.Component<any, any, any> {
   render() {
     return (
       <List>

@@ -2,8 +2,10 @@
   "presets": ["react", ["env", {
     "targets": {
       "browsers": [
-        "Firefox > 35"
-      ]
+        "Firefox > 31",
+        "Chrome > 41"
+      ],
+      "node": 4
     }
   }], "stage-0"]
 }
