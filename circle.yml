@@ -10,11 +10,11 @@ jobs:
    steps:
      - checkout
      - run:
-       name: Install dependencies
-       command: yarn
+         name: Install dependencies
+         command: yarn
      - run:
-       name: Lint code
-       command: yarn run lint
+         name: Lint code
+         command: yarn run lint
      - run:
-       name: Build code
-       command: yarn run build
+         name: Build code
+         command: yarn run build
