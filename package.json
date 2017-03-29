@@ -6,7 +6,7 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "lint": "eslint"
+    "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx"
   },
   "dependencies": {
     "material-ui": "^0.17.0",

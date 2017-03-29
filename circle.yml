@@ -14,7 +14,9 @@ jobs:
          command: yarn
      - run:
          name: Lint code
-         command: yarn run lint
+         command: |
+           mkdir -p $CIRCLE_TEST_REPORTS/reports
+           yarn run lint -- --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
      - run:
          name: Build code
          command: yarn run build
