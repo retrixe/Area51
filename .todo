@@ -1,6 +1,12 @@
-Folder component.
-ListCreator component.
-Server-side coding.
-
-Need to send files and list of files to the client.
-Next.js is an option to switch to.
+App component (aka main thing) {
+  create an "alternative" to Redux which enables other components to access App's state and use it like a reducer
+  NOT IMPORTNANT: make it possible to expand it's state to hold multiple "reducers"
+}
+Folder component (the list of files and folders) {
+  Wire it to the resulting code in App.
+  Fix the parameters it passes to ListCreator
+  Set it up to get the initial location to read files from in settings.json
+}
+ListCreator component (generates a list from certain parameters) {
+  Build the entire component which takes props, iterates through them and adds them to the items.
+}
