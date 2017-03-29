@@ -21,10 +21,22 @@ export default class App extends React.Component<void, Object, any> {
   constructor(props: any) {
     super(props);
 
+    this.state = {
+      currentFolder: "insert JSON parsing here"
+    };
+
     this.paperStyle = {
       height: 500,
       width: "100%"
     };
+  }
+
+  readState() {
+    // state reader
+  }
+
+  writeToState() {
+    // state writer
   }
 
   render() {

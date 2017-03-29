@@ -9,29 +9,30 @@
     "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx"
   },
   "dependencies": {
-    "material-ui": "^0.17.0",
+    "material-ui": "^0.17.1",
     "next": "^2.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.16.57",
-    "@types/react": "^15.0.16",
+    "@types/chai": "^3.4.35",
+    "@types/material-ui": "^0.16.59",
+    "@types/react": "^15.0.20",
     "@types/react-dom": "^0.14.23",
     "@types/react-tap-event-plugin": "^0.0.30",
     "ava": "^0.18.2",
-    "babel-eslint": "^7.1.1",
-    "babel-preset-env": "^1.2.1",
+    "babel-eslint": "^7.2.1",
+    "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
-    "babel-register": "^6.23.0",
+    "babel-register": "^6.24.0",
     "chai": "^3.5.0",
-    "eslint": "^3.17.1",
+    "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
-    "flow-bin": "^0.41.0"
+    "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "^0.42.0"
   }
 }
