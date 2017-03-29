@@ -1,0 +1,20 @@
+# Example comment.
+
+version: 2
+
+jobs:
+  build:
+   working_directory: ~/Area51
+   docker:
+     - image: node:latest
+   steps:
+     - checkout
+     - run:
+       name: Install dependencies
+       command: yarn
+     - run:
+       name: Lint code
+       command: yarn run lint
+     - run:
+       name: Build code
+       command: yarn run build
