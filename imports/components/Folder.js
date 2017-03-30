@@ -7,6 +7,9 @@ import List from "material-ui/List/List";
 
 // Importing the ListCreator.
 import ListCreator from "../ui/ListCreator";
+
+// Importing the JSON from settings.json to get where to initiate the file manager.
+import { folderToShow } from "../../settings.json";
 /* eslint-enable no-unused-vars */
 
 export default class Folder extends React.Component<any, any, any> {
@@ -14,7 +17,11 @@ export default class Folder extends React.Component<any, any, any> {
     super();
 
     this.state = {
-      test: [{
+      listItem: [{
+        name: "..",
+        type: "..",
+      },
+      {
         name: "Folder",
         type: "folder",
       },
@@ -22,13 +29,18 @@ export default class Folder extends React.Component<any, any, any> {
         name: "File",
         type: "file",
       }],
+      currentFolder: folderToShow,
     };
+  }
+
+  addToFolder(addition: string) {
+    this.setState({ currentFolder: `${this.state.currentFolder}/${addition}` });
   }
 
   render() {
     return (
       <List>
-        <ListCreator list={this.state.test} onItemClick={() => console.log("helloooo! wheeee! cookies!")} />
+        <ListCreator list={this.state.listItem} onItemClick={() => console.log("helloooo! wheeee! cookies!")} />
       </List>
     );
   }

@@ -18,10 +18,6 @@ export default class App extends React.Component<any, any, any> {
   constructor() {
     super();
 
-    this.state = {
-      currentFolder: "insert JSON parsing here",
-    };
-
     this.paperStyle = {
       height: 500,
       width: "100%",
@@ -31,22 +27,13 @@ export default class App extends React.Component<any, any, any> {
   paperStyle = {};
   muiTheme = getMuiTheme({ userAgent: false });
 
-
-  readState() {
-    return this.state;
-  }
-
-  writeToState(newState: Object) {
-    this.setState(newState);
-  }
-
   render() {
     return (
       <MuiThemeProvider muiTheme={this.muiTheme}>
         <div>
           <AppBar title="Area51" showMenuIconButton={false} />
           <Paper zDepth={1} rounded={false} style={this.paperStyle}>
-            <Folder readState={this.readState} writeToState={this.writeToState} />
+            <Folder />
           </Paper>
         </div>
       </MuiThemeProvider>

@@ -8,6 +8,9 @@
     "build": "next build",
     "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "dependencies": {
     "material-ui": "^0.17.1",
     "next": "^2.0.0",
