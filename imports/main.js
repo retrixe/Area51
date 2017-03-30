@@ -14,29 +14,30 @@ import Folder from "./components/Folder";
 /* eslint-enable no-unused-vars */
 
 // Final class.
-export default class App extends React.Component<void, Object, any> {
-  paperStyle = {};
-  muiTheme = getMuiTheme({ userAgent: false });
-
-  constructor(props: any) {
-    super(props);
+export default class App extends React.Component<any, any, any> {
+  constructor() {
+    super();
 
     this.state = {
-      currentFolder: "insert JSON parsing here"
+      currentFolder: "insert JSON parsing here",
     };
 
     this.paperStyle = {
       height: 500,
-      width: "100%"
+      width: "100%",
     };
   }
 
+  paperStyle = {};
+  muiTheme = getMuiTheme({ userAgent: false });
+
+
   readState() {
-    // state reader
+    return this.state;
   }
 
-  writeToState() {
-    // state writer
+  writeToState(newState: Object) {
+    this.setState(newState);
   }
 
   render() {
@@ -45,7 +46,7 @@ export default class App extends React.Component<void, Object, any> {
         <div>
           <AppBar title="Area51" showMenuIconButton={false} />
           <Paper zDepth={1} rounded={false} style={this.paperStyle}>
-            <Folder />
+            <Folder readState={this.readState} writeToState={this.writeToState} />
           </Paper>
         </div>
       </MuiThemeProvider>

@@ -5,11 +5,13 @@
 
 /* eslint-disable no-unused-vars */
 import React from "react";
-import App from "../imports/main";
 import Head from "next/head";
 
 // Fix material-ui bug and enable faster onClick called onTouchTap.
 import injectTapEventPlugin from "react-tap-event-plugin";
+
+// Import main.js, the main JavaScript code.
+import App from "../imports/main";
 /* eslint-enable no-unused-vars */
 
 // Injecting onTouchTap.

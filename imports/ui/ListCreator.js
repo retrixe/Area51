@@ -9,19 +9,26 @@ import FileIcon from "material-ui/svg-icons/editor/insert-drive-file";
 import FolderIcon from "material-ui/svg-icons/file/folder";
 /* eslint-enable no-unused-vars */
 
-export default class ListCreator extends React.Component {
-  constructor(props: {}) {
-    super(props);
-  }
-
-  render() {
+export default (props: Object) => {
+  const listItems = props.list.map((metadata) => {
+    if (metadata.type === "folder") {
+      return (
+        <ListItem
+          key={metadata.name}
+          onClick={props.onItemClick} primaryText={metadata.name} leftIcon={<FolderIcon />}
+        />
+      );
+    }
     return (
-      <blabla>
-        <ListItem onClick={this.props.onItemClick}
-         primaryText="Folder" leftIcon={<FolderIcon />} />
-        <ListItem onClick={this.props.onItemClick}
-         primaryText="File" leftIcon={<FileIcon />} />
-      </blabla>
+      <ListItem
+        key={metadata.name}
+        onClick={props.onItemClick} primaryText={metadata.name} leftIcon={<FileIcon />}
+      />
     );
-  }
-}
+  });
+  return (
+    <div>
+      {listItems}
+    </div>
+  );
+};
