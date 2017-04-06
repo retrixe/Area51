@@ -18,7 +18,7 @@ export default class Folder extends React.Component<any, any, any> {
 
     this.state = {
       listItem: [{
-        name: "..",
+        name: "Go to parent directory.",
         type: "..",
       },
       {

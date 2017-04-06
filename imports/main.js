@@ -30,12 +30,10 @@ export default class App extends React.Component<any, any, any> {
   render() {
     return (
       <MuiThemeProvider>
-        <div>
-          <Paper elevation={1} style={this.paperStyle}>
-            <AppBar><Toolbar><Text type="title" colorInherit>Area51</Text></Toolbar></AppBar>
-            <Folder />
-          </Paper>
-        </div>
+        <Paper elevation={1} style={this.paperStyle}>
+          <AppBar><Toolbar><Text type="title" colorInherit>Area51</Text></Toolbar></AppBar>
+          <Folder />
+        </Paper>
       </MuiThemeProvider>
     );
   }

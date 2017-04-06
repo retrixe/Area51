@@ -9,6 +9,7 @@ import ListItemIcon from "material-ui/List/ListItemIcon";
 // Importing icons.
 import FileIcon from "material-ui-icons/InsertDriveFile";
 import FolderIcon from "material-ui-icons/Folder";
+import ArrowBackIcon from "material-ui-icons/ArrowBack";
 /* eslint-enable no-unused-vars */
 
 export default (props: Object) => {
@@ -17,6 +18,13 @@ export default (props: Object) => {
       return (
         <ListItem button key={metadata.name} onClick={props.onItemClick}>
           <ListItemIcon><FolderIcon /></ListItemIcon>
+          <ListItemText primary={metadata.name} />
+        </ListItem>
+      );
+    } else if (metadata.type === "..") {
+      return (
+        <ListItem button key={metadata.name} onClick={props.onItemClick}>
+          <ListItemIcon><ArrowBackIcon /></ListItemIcon>
           <ListItemText primary={metadata.name} />
         </ListItem>
       );
