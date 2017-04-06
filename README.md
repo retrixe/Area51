@@ -4,7 +4,7 @@
 #### Minimum node version needed: [![node](https://img.shields.io/badge/node-%3E%3D4-brightgreen.svg?style=flat-square)](https://github.com/nodejs/LTS#lts-schedule)
 #### Is the code in master working? Safe to compile? [![CircleCI](https://img.shields.io/circleci/project/github/ibujs/Area51.svg?style=flat-square)](https://circleci.com/gh/ibujs/Area51)
 
-Project Area51, a tiny project to enable access to stored files. Basically, I developed this to bypass my school's website blocking stuff and get quick access to my files and stuff for some stuff *cough*. It's also a working example of SSR with React and Next.js. This project is based entirely on Next.js (framwork for SSR rendering), React and ES2017/ESNext JavaScript.
+Project Area51, a tiny project to enable access to stored files. Basically, I developed this to bypass my school's website blocking stuff and get quick access to my files and stuff for some stuff *cough*. It's also a working example of SSR with React and Next.js. This project is based entirely on Next.js (framework for SSR rendering), React and ES2017/ESNext JavaScript.
 
 # Supported browsers:
 - Chrome 41+

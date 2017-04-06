@@ -5,9 +5,10 @@ import React from "react";
 /* eslint-disable no-unused-vars */
 // Importing Material UI components below.
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import getMuiTheme from "material-ui/styles/getMuiTheme";
 import Paper from "material-ui/Paper";
 import AppBar from "material-ui/AppBar";
+import Toolbar from "material-ui/Toolbar";
+import Text from "material-ui/Text";
 
 // Importing Area51 components.
 import Folder from "./components/Folder";
@@ -25,14 +26,13 @@ export default class App extends React.Component<any, any, any> {
   }
 
   paperStyle = {};
-  muiTheme = getMuiTheme({ userAgent: false });
 
   render() {
     return (
-      <MuiThemeProvider muiTheme={this.muiTheme}>
+      <MuiThemeProvider>
         <div>
-          <AppBar title="Area51" showMenuIconButton={false} />
-          <Paper zDepth={1} rounded={false} style={this.paperStyle}>
+          <Paper elevation={1} style={this.paperStyle}>
+            <AppBar><Toolbar><Text type="title" colorInherit>Area51</Text></Toolbar></AppBar>
             <Folder />
           </Paper>
         </div>

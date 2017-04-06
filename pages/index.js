@@ -7,15 +7,9 @@
 import React from "react";
 import Head from "next/head";
 
-// Fix material-ui bug and enable faster onClick called onTouchTap.
-import injectTapEventPlugin from "react-tap-event-plugin";
-
 // Import main.js, the main JavaScript code.
 import App from "../imports/main";
 /* eslint-enable no-unused-vars */
-
-// Injecting onTouchTap.
-if (typeof window !== "undefined") injectTapEventPlugin();
 
 // CSS here.
 const myCSS = `/* latin-ext */
