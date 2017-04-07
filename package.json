@@ -7,7 +7,9 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx"
+    "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx && flow check",
+    "test": "ava",
+    "test-nyan": "ava --tap | tap-nyan"
   },
   "engines": {
     "node": ">=4"
@@ -17,7 +19,7 @@
     "express": "^4.15.2",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-alpha.2",
-    "next": "^2.0.1",
+    "next": "^2.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1"
@@ -39,7 +41,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "flow-bin": "^0.43.0"
+    "flow-bin": "^0.43.1",
+    "tap-nyan": "^1.1.0"
   },
   "ava": {
     "babel": "inherit"
