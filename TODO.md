@@ -17,4 +17,6 @@
 - [ ] Set up folder reactions and file reactions to inform Folder of files and folders clicked.
 
 ## What to do on the entire app:
+- [ ] Figure out how you'll support settings configuration.
 - [ ] Write tests for all components and stuff.
+- [ ] Get rid of this and put me on GitHub Projects or whatever it's called.

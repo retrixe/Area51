@@ -6,7 +6,7 @@
   "scripts": {
     "start": "meteor run",
     "build": "next build",
-    "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx && flow check",
+    "lint": "flow check && eslint -c .eslintrc.js ./**/*.js ./**/*.jsx",
     "test": "ava",
     "test-nyan": "ava --tap | tap-nyan"
   },
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "material-ui": "next",
+    "material-ui": "1.0.0-alpha.10",
     "material-ui-icons": "^1.0.0-alpha.2",
     "meteor-node-stubs": "^0.2.6",
     "react": "^15.4.2",

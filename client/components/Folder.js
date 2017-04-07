@@ -8,8 +8,8 @@ import List from "material-ui/List/List";
 // Importing the ListCreator.
 import ListCreator from "../../imports/ui/ListCreator";
 
-// Importing the JSON from settings.json to get where to initiate the file manager.
-// import { folderToShow } from "../../settings.json";
+// Fetching the config from settings.js to get where to initiate the file manager.
+import { folderToShow } from "../../settings";
 /* eslint-enable no-unused-vars */
 
 export default class Folder extends React.Component<any, any, any> {
@@ -29,7 +29,7 @@ export default class Folder extends React.Component<any, any, any> {
         name: "File",
         type: "file",
       }],
-//      currentFolder: folderToShow,
+      currentFolder: folderToShow,
     };
   }
 

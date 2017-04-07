@@ -1288,6 +1288,10 @@ caseless@~0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.11.0.tgz#715b96ea9841593cc33067923f5ec60ebda4f7d7"
 
+chain-function@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
+
 chalk@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
@@ -1702,7 +1706,7 @@ doctrine@^2.0.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-dom-helpers@^3.2.1:
+dom-helpers@^3.2.0, dom-helpers@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
 
@@ -3113,9 +3117,9 @@ material-ui-icons@^1.0.0-alpha.2:
   dependencies:
     recompose "^0.22.0"
 
-material-ui@next:
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-alpha.9.tgz#b1564cfaf42d2ca752351d24e93e2a7df6a68ac0"
+material-ui@1.0.0-alpha.10:
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-alpha.10.tgz#ed0441fbbe2b185ea42f9060e2f85b845e7beb6d"
   dependencies:
     classnames "^2.2.5"
     dom-helpers "^3.2.1"
@@ -3124,8 +3128,8 @@ material-ui@next:
     keycode "^2.1.8"
     lodash "^4.17.4"
     object-assign "^4.1.1"
-    react-addons-transition-group "^15.0.0"
     react-event-listener "^0.4.3"
+    react-transition-group "^1.1.1"
     recompose "^0.22.0"
     warning "^3.0.0"
 
@@ -3735,13 +3739,6 @@ react-addons-shallow-compare@^15.4.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-addons-transition-group@^15.0.0:
-  version "15.4.2"
-  resolved "https://registry.yarnpkg.com/react-addons-transition-group/-/react-addons-transition-group-15.4.2.tgz#4c42fa1c2ce024acab2924316c0f11268ded1af3"
-  dependencies:
-    fbjs "^0.8.4"
-    object-assign "^4.1.0"
-
 react-dom@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
@@ -3763,6 +3760,14 @@ react-tap-event-plugin@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
   dependencies:
     fbjs "^0.8.6"
+
+react-transition-group@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.1.1.tgz#f9d0f0dff82f52574fc5ab30684add24948d0f23"
+  dependencies:
+    chain-function "^1.0.0"
+    dom-helpers "^3.2.0"
+    warning "^3.0.0"
 
 react@^15.4.2:
   version "15.4.2"
