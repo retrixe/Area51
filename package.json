@@ -4,8 +4,7 @@
   "_comment": "The following line is true because this is not a module :P",
   "private": true,
   "scripts": {
-    "dev": "next",
-    "start": "next start",
+    "start": "meteor run",
     "build": "next build",
     "lint": "eslint -c .eslintrc.js ./**/*.js ./**/*.jsx && flow check",
     "test": "ava",
@@ -15,17 +14,17 @@
     "node": ">=4"
   },
   "dependencies": {
-    "concurrently": "^3.4.0",
-    "express": "^4.15.2",
+    "babel-runtime": "^6.23.0",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-alpha.2",
-    "next": "^2.1.0",
+    "meteor-node-stubs": "^0.2.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
     "@types/chai": "^3.4.35",
+    "@types/express": "^4.0.35",
     "@types/material-ui": "^0.16.60",
     "@types/react": "^15.0.21",
     "@types/react-dom": "^0.14.23",
@@ -45,6 +44,9 @@
     "tap-nyan": "^1.1.0"
   },
   "ava": {
-    "babel": "inherit"
+    "babel": "inherit",
+    "files": [
+      "tests/**/*.js"
+    ]
   }
 }

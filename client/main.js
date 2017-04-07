@@ -1,6 +1,7 @@
 // @flow
-// This is the main entry file. index.js can be likened to index.html
+// Importing React and ReactDOM
 import React from "react";
+import ReactDOM from "react-dom";
 
 /* eslint-disable no-unused-vars */
 // Importing Material UI components below.
@@ -15,7 +16,7 @@ import Folder from "./components/Folder";
 /* eslint-enable no-unused-vars */
 
 // Final class.
-export default class App extends React.Component<any, any, any> {
+class App extends React.Component<any, any, any> {
   constructor() {
     super();
 
@@ -38,3 +39,5 @@ export default class App extends React.Component<any, any, any> {
     );
   }
 }
+
+ReactDOM.render(<App />, document.getElementById("main"));

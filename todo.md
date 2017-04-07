@@ -17,6 +17,4 @@
 - [ ] Set up folder reactions and file reactions to inform Folder of files and folders clicked.
 
 ## What to do on the entire app:
-- [ ] Write Express server.
 - [ ] Write tests for all components and stuff.
-- [ ] Shift to Meteor for v2.0.

@@ -52,14 +52,14 @@ This will start the application and will be accessible at localhost:3000. Any ed
 ```
 Area51
 |
-|--  .next - Generated directory with built files when application is started (generated on starting app)
+|--  .meteor - Contains the Meteor configuration, and on starting the app, installs the dev_bundle there.
 |--  .vscode - Contains VSCode configuration.
 |--  imports - Contains reusable components, and certain single-use components for import.
 |--  node_modules - Contains modules used by app (created when npm install is run)
-|--  pages - Contains all pages in the app. Only index exists right now.
-|--  server - Contains the Express server. Enables filesystem access.
-|--  static - Contains static content to be served
-|__  test - Contains unit tests :P
+|--  client - Contains client-side code
+|       |_ components - Single-use components with logic.
+|--  public - Contains static content to be served.
+|__  tests - Contains unit tests :P
 ```
 
 ### Coding standards.
