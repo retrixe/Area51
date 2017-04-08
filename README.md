@@ -58,6 +58,7 @@ Area51
 |--  imports - Contains reusable components, and certain single-use components for import.
 |--  node_modules - Contains modules used by app (created when npm install is run)
 |--  public - Contains static content to be served.
+|--  server - Contains server-side code
 |--  tests - Contains unit tests :P testing with Ava :P
 |--  .babelrc - Defines transpilation presets with Babel (what to transform into legacy JS from modern JS).
 |--  .eslintrc.js - Contains rules for how code should be written with ESLint. Uses airbnb preset.
