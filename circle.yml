@@ -16,6 +16,6 @@ jobs:
          name: Lint code
          command: |
            mkdir -p $CIRCLE_TEST_REPORTS/reports
-           sudo apt-get install ocaml libelf-dev
+           apt-get install ocaml libelf-dev
            yarn run lint -- --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
            yarn run test
