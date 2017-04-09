@@ -5,6 +5,7 @@
 #### Is the code in master working? Safe to compile? [![CircleCI](https://img.shields.io/circleci/project/github/ibujs/Area51.svg?style=flat-square)](https://circleci.com/gh/ibujs/Area51)
 
 Project Area51, a tiny project to enable access to stored files. Basically, specify a folder to it on your local filesystem, and you'll be able to access it from anywhere, being able to download your files and entering folders. I developed this to bypass my school's website blocking stuff and get quick access to my files and stuff (like fetching random scripts which wreck the system lol). Yes, there is no authentication or uploading files support right now, but I'll add it later :P
+
 This project is based entirely on Meteor (framework for full-stack development), React and ES2017/ESNext JavaScript. Thus it serves as an example for React, Meteor and ES2017+.
 
 # Supported browsers:
@@ -20,7 +21,9 @@ Please? No. Go mess with .babelrc and compile it from scratch. Blame Microsoft o
 # Installation
 ## Getting started
 Setting this up requires Meteor to be installed, because it's not much of a one-click-to-install app right now. I might make it easier to install in the unforseeable future (maybe never if this thing doesn't get an issue from someone ELSE using it, not expecting that to happen) but not now. [Click here](https://www.meteor.com/install) to download the latest version of Meteor.
+
 Next, download the code in this repository (1st release not published yet) by [clicking here](https://github.com/ibujs/Area51/archive/master.zip) and unzip it in a folder, or simply clone this repository.
+
 Finally, open a command prompt window in the folder where the app is located (Google exists for a reason, if you don't know) and execute the following commands (with an internet connection):
 ```
 > meteor npm install
@@ -30,7 +33,7 @@ You can then navigate to localhost:3000 to see the application running.
 ## Configuration
 Right now when you start it, it looks like a mock-up of the app. You can't configure it as of yet.
 # Development?
-You're welcome to throw some pull requests and issues at me. This is how this app is being developed.
+You're welcome to throw some pull requests and issues at me. This is the application's development structure.
 ## Set up a development environment
 This guide requires you to know some basic command line commands, like how to navigate the filesystem. It requires the knowledge of how to download a GitHub repository (preferably using Git cloning) and some regular computer know-how.
 
