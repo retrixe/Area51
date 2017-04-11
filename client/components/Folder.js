@@ -9,7 +9,7 @@ import List from "material-ui/List/List";
 import ListCreator from "../../imports/ui/ListCreator";
 
 // Fetching the config from settings.js to get where to initiate the file manager.
-import { folderToShow } from "../../settings";
+import { folderToShow } from "../../settings.json";
 /* eslint-enable no-unused-vars */
 
 export default class Folder extends React.Component<any, any, any> {
