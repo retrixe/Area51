@@ -1,4 +1,5 @@
 // @flow
+/* eslint-env browser */
 // Importing React and ReactDOM
 import React from "react";
 import ReactDOM from "react-dom";

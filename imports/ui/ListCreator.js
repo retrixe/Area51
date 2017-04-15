@@ -1,4 +1,5 @@
 // @flow
+/* eslint-env browser */
 import React from "react";
 /* eslint-disable no-unused-vars */
 // Importing material-ui components.

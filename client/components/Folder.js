@@ -1,5 +1,5 @@
 // @flow
-/* eslint-env node */
+/* eslint-env browser */
 import React from "react";
 /* eslint-disable no-unused-vars */
 // Importing material-ui components.
@@ -13,7 +13,7 @@ import { folderToShow } from "../../settings.json";
 
 // Import Meteor :3
 // flow-disable-next-line
-import { Meteor } from "meteor/meteor"; // eslint-disable-line
+import { Meteor } from "meteor/meteor";
 /* eslint-enable no-unused-vars */
 
 export default class Folder extends React.Component<any, any, any> {

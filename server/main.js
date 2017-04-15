@@ -1,7 +1,8 @@
 // @flow
+/* eslint-env node */
 // Import Meteor :3
 // flow-disable-next-line
-import { Meteor } from "meteor/meteor"; // eslint-disable-line
+import { Meteor } from "meteor/meteor";
 // Import fs to access the filesystem.
 import fs from "fs";
 
