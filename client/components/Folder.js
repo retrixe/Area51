@@ -5,15 +5,15 @@ import React from "react";
 // Importing material-ui components.
 import List from "material-ui/List/List";
 
+// Import Meteor :3
+// flow-disable-next-line
+import { Meteor } from "meteor/meteor";
+
 // Importing the ListCreator.
 import ListCreator from "../../imports/ui/ListCreator";
 
 // Fetching the config from settings.js to get where to initiate the file manager.
 import { folderToShow } from "../../settings.json";
-
-// Import Meteor :3
-// flow-disable-next-line
-import { Meteor } from "meteor/meteor";
 /* eslint-enable no-unused-vars */
 
 export default class Folder extends React.Component<any, any, any> {

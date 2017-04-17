@@ -1,8 +1,7 @@
 module.exports = {
   "env": {
     "es6": true,
-    "browser": true,
-    "node": true
+    "meteor": true
   },
   "extends": "eslint-config-airbnb",
   "parser": "babel-eslint",
@@ -39,14 +38,13 @@ module.exports = {
         "vars": "local",
         "args": "after-used"
     }],
-    "no-mixed-operators": [
-      "off"
-    ],
-    "no-var": [
-      "off"
-    ],
-    "react/jsx-filename-extension": [
-      "off"
-    ]
+    // For global variable definitions.
+    "no-var": "off",
+    // For JSX in .js files.
+    "react/jsx-filename-extension": "off",
+    // For import issues with Meteor.
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off"
   }
 };
