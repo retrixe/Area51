@@ -20,19 +20,15 @@ export default class Folder extends React.Component<any, any, any> {
   constructor() {
     super();
 
+    const folderContents = Meteor.call("getFolderContents", this.state.currentFolder);
     this.state = {
-      listItem: [{
-        name: "Go to parent directory.",
-        type: "..",
-      },
-      {
-        name: "Folder",
-        type: "folder",
-      },
-      {
-        name: "File",
-        type: "file",
-      }],
+      listItem: [
+        {
+          name: "Go to parent directory.",
+          type: "..",
+        },
+        ...folderContents,
+      ],
       currentFolder: folderToShow,
     };
   }

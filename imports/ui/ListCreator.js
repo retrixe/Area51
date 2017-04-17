@@ -39,7 +39,6 @@ export default (props: Object) => {
   });
   return (
     <div>
-      <ListItem><ListItemText primary={"This is a temporary space and will be removed."} /></ListItem>
       {listItems}
     </div>
   );

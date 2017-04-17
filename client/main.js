@@ -22,7 +22,7 @@ class App extends React.Component<any, any, any> {
     super();
 
     this.paperStyle = {
-      height: 500,
+      height: "75%",
       width: "100%",
     };
   }
@@ -33,7 +33,9 @@ class App extends React.Component<any, any, any> {
     return (
       <MuiThemeProvider>
         <Paper elevation={1} style={this.paperStyle}>
-          <AppBar><Toolbar><Text type="title" colorInherit>Area51</Text></Toolbar></AppBar>
+          <AppBar style={{ position: "absolute" }}>
+            <Toolbar><Text type="title" colorInherit>Area51</Text></Toolbar>
+          </AppBar>
           <Folder />
         </Paper>
       </MuiThemeProvider>
