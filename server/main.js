@@ -5,6 +5,7 @@
 import { Meteor } from "meteor/meteor";
 // Import fs and path to access the filesystem.
 import fs from "fs";
+import path from "path";
 
 Meteor.methods({
   getFolderContents(folder) {
@@ -21,5 +22,8 @@ Meteor.methods({
       folderContentsWithTypes.push({ name: folderContents[i], type: getType() });
     }
     return folderContentsWithTypes;
+  },
+  joinPaths(...paths) {
+    path.join(paths);
   },
 });

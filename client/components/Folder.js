@@ -20,27 +20,50 @@ export default class Folder extends React.Component<any, any, any> {
   constructor() {
     super();
 
-    const folderContents = Meteor.call("getFolderContents", this.state.currentFolder);
     this.state = {
       listItem: [
         {
-          name: "Go to parent directory.",
-          type: "..",
+          name: "Please wait, data is being fetched from the server.",
+          type: "dataFetch",
         },
-        ...folderContents,
       ],
       currentFolder: folderToShow,
     };
   }
 
-  addToFolder(addition: string) {
-    this.setState({ currentFolder: `${this.state.currentFolder}/${addition}` });
+  componentDidMount() {
+    const goToParentDirectory = {
+      name: "Go to parent directory",
+      type: "..",
+    };
+    Meteor.call("getFolderContents", folderToShow, (err, result) => {
+      this.setState({ listItem: [goToParentDirectory, ...result] });
+    });
+  }
+
+  onItemClick(type: string, addition: string) {
+    if (type === "folder") {
+      Meteor.call("joinPaths", this.state.currentFolder, addition, (err, result) => {
+        this.setState({ currentFolder: result });
+        const goToParentDirectory = {
+          name: "Go to parent directory",
+          type: "..",
+        };
+        Meteor.call("getFolderContents", folderToShow, (error, files) => {
+          this.setState({ listItem: [goToParentDirectory, ...files] });
+        });
+      });
+    } else if (type === "file") {
+      console.log("hellooooo! wheeeee! cookies! I'm a fileeee!");
+    } else {
+      console.log("hellooo! wheeee! wanna go up! cookies!!!!!");
+    }
   }
 
   render() {
     return (
       <List>
-        <ListCreator list={this.state.listItem} onItemClick={() => console.log("helloooo! wheeee! cookies!")} />
+        <ListCreator list={this.state.listItem} onItemClick={(t, a) => this.onItemClick(t, a)} />
       </List>
     );
   }

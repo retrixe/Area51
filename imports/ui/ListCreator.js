@@ -17,21 +17,33 @@ export default (props: Object) => {
   const listItems = props.list.map((metadata) => {
     if (metadata.type === "folder") {
       return (
-        <ListItem button key={metadata.name} onClick={props.onItemClick}>
+        <ListItem
+          button key={metadata.name} onClick={() => props.onItemClick(metadata.type, metadata.name)}
+        >
           <ListItemIcon><FolderIcon /></ListItemIcon>
           <ListItemText primary={metadata.name} />
         </ListItem>
       );
     } else if (metadata.type === "..") {
       return (
-        <ListItem button key={metadata.name} onClick={props.onItemClick}>
+        <ListItem
+          button key={metadata.name} onClick={() => props.onItemClick(metadata.type, metadata.name)}
+        >
           <ListItemIcon><ArrowBackIcon /></ListItemIcon>
+          <ListItemText primary={metadata.name} />
+        </ListItem>
+      );
+    } else if (metadata.type === "dataFetch") {
+      return (
+        <ListItem key={metadata.name}>
           <ListItemText primary={metadata.name} />
         </ListItem>
       );
     }
     return (
-      <ListItem button key={metadata.name} onClick={props.onItemClick}>
+      <ListItem
+        button key={metadata.name} onClick={() => props.onItemClick(metadata.type, metadata.name)}
+      >
         <ListItemIcon><FileIcon /></ListItemIcon>
         <ListItemText primary={metadata.name} />
       </ListItem>
