@@ -1,5 +1,6 @@
 // @flow
 /* eslint-env browser */
+
 // Importing React and ReactDOM
 import React from "react";
 import ReactDOM from "react-dom";
@@ -14,6 +15,7 @@ import Text from "material-ui/Text";
 
 // Importing Area51 components.
 import Folder from "./components/Folder";
+
 /* eslint-enable no-unused-vars */
 
 // Final class.
