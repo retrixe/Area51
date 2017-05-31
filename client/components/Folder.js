@@ -7,10 +7,8 @@ import React from "react";
 // Importing material-ui components.
 import List from "material-ui/List/List";
 
-// Import Meteor :3 and Minimongo :333
-// flow-disable-next-line
+// Import Meteor :3 and Minimongo :333 and createContainer :33333
 import { Meteor } from "meteor/meteor";
-// flow-disable-next-line
 import { Mongo } from "meteor/mongo";
 
 // Importing the ListCreator.
@@ -21,7 +19,7 @@ import { folderToShow } from "../../settings.json";
 /* eslint-enable no-unused-vars */
 
 // Create the filesystem collection and subscribe to the server collection.
-const Filesystem = new Mongo.Collection("filesystem");
+const Filesystem = new Mongo.Collection("filesystem"); // eslint-disable-line no-unused-vars
 Meteor.subscribe("filesystem");
 
 // Create the class.
@@ -30,8 +28,29 @@ export default class Folder extends React.Component<any, any, any> {
     super();
 
     this.state = {
+      listItems: [
+        {
+          name: "Please wait, data is being fetched from the server.",
+          type: "dataFetch",
+        },
+      ],
       currentFolder: folderToShow,
     };
+  }
+
+  componentDidMount() {
+    // Fetch directory contents in async mode.
+    Meteor.call("getFolderContents", folderToShow, (err, result) => {
+      // set state to the go back item and the items in the directory.
+      this.setState({ listItems: [{
+        name: "Go to parent directory",
+        type: "..",
+      }, ...result] });
+    });
+    // Update Filesystem collection.
+    Meteor.call("updateFolderContents", this.state.currentFolder, (error) => {
+      if (error) console.error(error); // eslint-disable-line no-console
+    });
   }
 
   onItemClick(type: string, addition: string) {
@@ -39,11 +58,17 @@ export default class Folder extends React.Component<any, any, any> {
     const handleNewPath = (err, result) => {
       // In callback, set currentFolder to the joint result.
       this.setState({ currentFolder: result });
-      // Now get the folder contents for the result.
+      // Update collecton.
       Meteor.call("updateFolderContents", this.state.currentFolder, (error) => {
-        if (error) {
-          console.error(error); // eslint-disable-line no-console
-        }
+        if (error) console.error(error); // eslint-disable-line no-console
+      });
+      // Now get the folder contents for the result.
+      Meteor.call("getFolderContents", this.state.currentFolder, (error, files) => {
+      // set state to the go back item and the items in the directory.
+        this.setState({ listItems: [{
+          name: "Go to parent directory",
+          type: "..",
+        }, ...files] });
       });
     };
 
@@ -62,7 +87,7 @@ export default class Folder extends React.Component<any, any, any> {
   render() {
     return (
       <List>
-        <ListCreator list={Filesystem.find({})} onItemClick={(t, a) => this.onItemClick(t, a)} />
+        <ListCreator list={this.state.listItems} onItemClick={(t, a) => this.onItemClick(t, a)} />
       </List>
     );
   }

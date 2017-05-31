@@ -1,10 +1,9 @@
 // @flow
 /* eslint-env node */
-// Import Meteor :3
-// flow-disable-next-line
+// Import Meteor :3 and Mongo :3
 import { Meteor } from "meteor/meteor";
-// flow-disable-next-line
 import { Mongo } from "meteor/mongo";
+
 // Import fs and path to access the filesystem.
 import fs from "fs";
 import path from "path";
@@ -16,7 +15,7 @@ Meteor.publish("filesystem", () => Filesystem.find({}));
 
 // Create the Meteor methods.
 Meteor.methods({
-  // This method enables the client to get the contents of any folder.
+  // This method updates the content of the Filesystem database.
   updateFolderContents(folder) {
     // Get folder contents and create initial variables the loop will write to.
     const folderContents = fs.readdirSync(folder);
@@ -43,6 +42,28 @@ Meteor.methods({
     folderContentsWithTypes.map((item) => { // eslint-disable-line array-callback-return
       Filesystem.insert(item);
     });
+  },
+
+  // This method enables the client to get the contents of any folder.
+  getFolderContents(folder) {
+    // Get folder contents and create initial variables the loop will write to.
+    const folderContents = fs.readdirSync(folder);
+    const folderContentsWithTypes = [];
+    let i;
+    // Define the function to get the type of a directory item.
+    const getType = () => {
+      if (fs.lstatSync(`${folder}/${folderContents[i]}`).isDirectory()) {
+        return "folder";
+      }
+      return "file";
+    };
+    // Start the loop.
+    for (i = 0; i < folderContents.length; i += 1) {
+      // Push objects to folderContentsWithTypes.
+      folderContentsWithTypes.push({ name: folderContents[i], type: getType() });
+    }
+    // Return folderContentsWithTypes.
+    return folderContentsWithTypes;
   },
 
   // Pass it some paths and get a combination of those paths.

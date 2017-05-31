@@ -11,7 +11,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Paper from "material-ui/Paper";
 import AppBar from "material-ui/AppBar";
 import Toolbar from "material-ui/Toolbar";
-import Text from "material-ui/Text";
+import Typography from "material-ui/Typography";
 
 // Importing Area51 components.
 import Folder from "./components/Folder";
@@ -36,7 +36,7 @@ class App extends React.Component<any, any, any> {
       <MuiThemeProvider>
         <div>
           <AppBar style={{ position: "relative" }}>
-            <Toolbar><Text type="title" colorInherit>Area51</Text></Toolbar>
+            <Toolbar><Typography type="title" colorInherit>Area51</Typography></Toolbar>
           </AppBar>
           <Paper elevation={4} style={this.paperStyle} square>
             <Folder />
