@@ -3,7 +3,7 @@ module.exports = {
     "es6": true,
     "meteor": true
   },
-  "extends": "eslint-config-airbnb",
+  "extends": ["plugin:meteor/recommended", "plugin:flowtype/recommended", "eslint-config-airbnb"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -13,7 +13,9 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "meteor",
+    "flowtype"
   ],
   "rules": {
     "indent": [
