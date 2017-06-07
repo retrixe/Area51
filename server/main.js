@@ -10,9 +10,9 @@ import path from "path";
 // Create the Meteor methods.
 Meteor.methods({
   // This method enables the client to get the contents of any folder.
-  getFolderContents(folder) {
+  getFolderContents(folder: string): Array<{ name: string, type: string }> {
     // Get folder contents and create initial variables the loop will write to.
-    const folderContents = fs.readdirSync(folder);
+    const folderContents: Array<string> = fs.readdirSync(folder);
     const folderContentsWithTypes = [];
     let i;
     // Define the function to get the type of a directory item.
@@ -32,12 +32,12 @@ Meteor.methods({
   },
 
   // Pass it some paths and get a combination of those paths.
-  joinPaths(...paths) {
+  joinPaths(...paths): string {
     return path.join(...paths);
   },
 
-  goUpOneDirectory(pathy) {
-    const pathyArray = pathy.split(path.sep);
+  goUpOneDirectory(pathy: string): string {
+    const pathyArray: Array<string> = pathy.split(path.sep);
     if (pathyArray[0] === "") {
       pathyArray[0] = "/";
     }

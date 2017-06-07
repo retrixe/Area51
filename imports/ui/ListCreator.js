@@ -13,14 +13,16 @@ import FolderIcon from "material-ui-icons/Folder";
 import ArrowBackIcon from "material-ui-icons/ArrowBack";
 /* eslint-enable no-unused-vars */
 
-export default (props: Object) => {
-  const listItems = props.list.map((metadata) => {
+export default (props: Object): React.createElement => {
+  const listItems: Array<React.createElement> = props.list.map((metadata: {
+    type: string, name: string
+  }): React.createElement => {
     if (metadata.type === "folder") {
       return (
         <ListItem
           button
           key={metadata.name}
-          onClick={() => props.onItemClick(metadata.type, metadata.name)}
+          onClick={(): void => props.onItemClick(metadata.type, metadata.name)}
         >
           <ListItemIcon><FolderIcon /></ListItemIcon>
           <ListItemText primary={metadata.name} />
@@ -31,7 +33,7 @@ export default (props: Object) => {
         <ListItem
           button
           key={metadata.name}
-          onClick={() => props.onItemClick(metadata.type, metadata.name)}
+          onClick={(): void => props.onItemClick(metadata.type, metadata.name)}
         >
           <ListItemIcon><ArrowBackIcon /></ListItemIcon>
           <ListItemText primary={metadata.name} />
@@ -48,7 +50,7 @@ export default (props: Object) => {
       <ListItem
         button
         key={metadata.name}
-        onClick={() => props.onItemClick(metadata.type, metadata.name)}
+        onClick={(): void => props.onItemClick(metadata.type, metadata.name)}
       >
         <ListItemIcon><FileIcon /></ListItemIcon>
         <ListItemText primary={metadata.name} />

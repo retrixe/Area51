@@ -19,7 +19,7 @@ import Folder from "./components/Folder";
 /* eslint-enable no-unused-vars */
 
 // Final class.
-class App extends React.Component<any, any, any> {
+class App extends React.Component<void, {}, void> {
   constructor() {
     super();
 
@@ -27,6 +27,11 @@ class App extends React.Component<any, any, any> {
       marginTop: "10px",
       width: "100%",
     };
+  }
+
+  paperStyle: {
+    marginTop: string,
+    width: string | number,
   }
 
   paperStyle = {};

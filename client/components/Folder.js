@@ -17,8 +17,12 @@ import ListCreator from "../../imports/ui/ListCreator";
 import { folderToShow } from "../../settings.json";
 /* eslint-enable no-unused-vars */
 
+// State types.
+type listItemsState = { name: string, type: string };
+type state = { listItems: Array<listItemsState>, currentFolder: string };
+
 // Create the class.
-export default class Folder extends React.Component<any, any, any> {
+export default class Folder extends React.Component<void, {}, state> {
   constructor() {
     super();
 
@@ -33,9 +37,14 @@ export default class Folder extends React.Component<any, any, any> {
     };
   }
 
+  state: {
+    listItems: Array<{ name: string, type: string }>,
+    currentFolder: string
+  }
+
   componentDidMount() {
     // Fetch directory contents in async mode.
-    Meteor.call("getFolderContents", folderToShow, (err, result) => {
+    Meteor.call("getFolderContents", folderToShow, (err: string, result: Array<listItemsState>) => {
       // set state to the go back item and the items in the directory.
       this.setState({ listItems: [{
         name: "Go to parent directory",
@@ -46,11 +55,11 @@ export default class Folder extends React.Component<any, any, any> {
 
   onItemClick(type: string, addition: string) {
     // Callback function to update folder contents.
-    const handleNewPath = (err, result) => {
+    const handleNewPath = (err: string, result: string) => {
       // In callback, set currentFolder to the joint result.
       this.setState({ currentFolder: result });
       // Now get the folder contents for the result.
-      Meteor.call("getFolderContents", this.state.currentFolder, (error, files) => {
+      Meteor.call("getFolderContents", this.state.currentFolder, (error: string, files: Array<listItemsState>) => {
       // set state to the go back item and the items in the directory.
         this.setState({ listItems: [{
           name: "Go to parent directory",
@@ -72,9 +81,10 @@ export default class Folder extends React.Component<any, any, any> {
   }
 
   render() {
+    const reactifunc = (t: string, a: string) => this.onItemClick(t, a);
     return (
       <List>
-        <ListCreator list={this.state.listItems} onItemClick={(t, a) => this.onItemClick(t, a)} />
+        <ListCreator list={this.state.listItems} onItemClick={reactifunc} />
       </List>
     );
   }
