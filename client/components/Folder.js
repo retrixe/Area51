@@ -9,7 +9,6 @@ import List from "material-ui/List/List";
 
 // Import Meteor :3 and Minimongo :333 and createContainer :33333
 import { Meteor } from "meteor/meteor";
-import { Mongo } from "meteor/mongo";
 
 // Importing the ListCreator.
 import ListCreator from "../../imports/ui/ListCreator";
@@ -17,10 +16,6 @@ import ListCreator from "../../imports/ui/ListCreator";
 // Fetching the config from settings.js to get where to initiate the file manager.
 import { folderToShow } from "../../settings.json";
 /* eslint-enable no-unused-vars */
-
-// Create the filesystem collection and subscribe to the server collection.
-const Filesystem = new Mongo.Collection("filesystem"); // eslint-disable-line no-unused-vars
-Meteor.subscribe("filesystem");
 
 // Create the class.
 export default class Folder extends React.Component<any, any, any> {
@@ -47,10 +42,6 @@ export default class Folder extends React.Component<any, any, any> {
         type: "..",
       }, ...result] });
     });
-    // Update Filesystem collection.
-    Meteor.call("updateFolderContents", this.state.currentFolder, (error) => {
-      if (error) console.error(error); // eslint-disable-line no-console
-    });
   }
 
   onItemClick(type: string, addition: string) {
@@ -58,10 +49,6 @@ export default class Folder extends React.Component<any, any, any> {
     const handleNewPath = (err, result) => {
       // In callback, set currentFolder to the joint result.
       this.setState({ currentFolder: result });
-      // Update collecton.
-      Meteor.call("updateFolderContents", this.state.currentFolder, (error) => {
-        if (error) console.error(error); // eslint-disable-line no-console
-      });
       // Now get the folder contents for the result.
       Meteor.call("getFolderContents", this.state.currentFolder, (error, files) => {
       // set state to the go back item and the items in the directory.

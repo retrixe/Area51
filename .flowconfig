@@ -12,6 +12,7 @@
 # Following packages to be ignored due to type errors. Wait for material-ui to hit stable.
 .*/node_modules/eslint-plugin-jsx-a11y/.*
 .*/node_modules/material-ui/.*flow
+.*/node_modules/jss/lib/plugins/.*flow
 
 [include]
 

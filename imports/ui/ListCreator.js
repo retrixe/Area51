@@ -18,7 +18,9 @@ export default (props: Object) => {
     if (metadata.type === "folder") {
       return (
         <ListItem
-          button key={metadata.name} onClick={() => props.onItemClick(metadata.type, metadata.name)}
+          button
+          key={metadata.name}
+          onClick={() => props.onItemClick(metadata.type, metadata.name)}
         >
           <ListItemIcon><FolderIcon /></ListItemIcon>
           <ListItemText primary={metadata.name} />
@@ -27,7 +29,9 @@ export default (props: Object) => {
     } else if (metadata.type === "..") {
       return (
         <ListItem
-          button key={metadata.name} onClick={() => props.onItemClick(metadata.type, metadata.name)}
+          button
+          key={metadata.name}
+          onClick={() => props.onItemClick(metadata.type, metadata.name)}
         >
           <ListItemIcon><ArrowBackIcon /></ListItemIcon>
           <ListItemText primary={metadata.name} />
@@ -42,7 +46,9 @@ export default (props: Object) => {
     }
     return (
       <ListItem
-        button key={metadata.name} onClick={() => props.onItemClick(metadata.type, metadata.name)}
+        button
+        key={metadata.name}
+        onClick={() => props.onItemClick(metadata.type, metadata.name)}
       >
         <ListItemIcon><FileIcon /></ListItemIcon>
         <ListItemText primary={metadata.name} />
