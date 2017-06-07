@@ -43,7 +43,9 @@
     "tap-nyan": "^1.1.0"
   },
   "ava": {
-    "babel": "inherit",
+    "babel": {
+      "presets": ["react", ["env", { "targets": { "node": 8 }}], "stage-0"]
+    },
     "files": [
       "tests/**/*.js"
     ]

@@ -47,6 +47,7 @@ module.exports = {
     // For import issues with Meteor.
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "meteor/audit-argument-checks": "off"
   }
 };
