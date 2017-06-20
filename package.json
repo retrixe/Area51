@@ -15,39 +15,45 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "material-ui": "^1.0.0-alpha.16",
+    "material-ui": "1.0.0-alpha.19",
     "material-ui-icons": "^1.0.0-alpha.3",
     "meteor-node-stubs": "^0.2.11",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.17.10",
-    "@types/meteor": "^1.4.1",
-    "@types/react": "^15.0.27",
+    "@types/enzyme": "^2.8.0",
+    "@types/material-ui": "^0.17.11",
+    "@types/meteor": "^1.4.2",
+    "@types/react": "^15.0.29",
     "@types/react-dom": "^15.5.0",
+    "@types/react-test-renderer": "^15.5.0",
     "ava": "^0.19.1",
     "babel-eslint": "^7.2.3",
-    "babel-preset-env": "^1.5.1",
+    "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.1",
+    "browser-env": "^2.0.31",
+    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-meteor": "^4.0.1",
-    "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.47.0",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.48.0",
+    "react-test-renderer": "^15.6.1",
     "tap-nyan": "^1.1.0"
   },
   "ava": {
     "babel": {
-      "presets": ["react", ["env", { "targets": { "node": 8 }}], "stage-0"]
+      "presets": [
+        "react",
+        "@ava/stage-4",
+        "stage-0"
+      ]
     },
-    "files": [
-      "tests/**/*.js"
-    ]
+    "concurrency": 5
   }
 }

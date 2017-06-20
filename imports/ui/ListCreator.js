@@ -1,7 +1,6 @@
 // @flow
 /* eslint-env browser */
 import React from "react";
-/* eslint-disable no-unused-vars */
 // Importing material-ui components.
 import ListItem from "material-ui/List/ListItem";
 import ListItemText from "material-ui/List/ListItemText";
@@ -11,7 +10,6 @@ import ListItemIcon from "material-ui/List/ListItemIcon";
 import FileIcon from "material-ui-icons/InsertDriveFile";
 import FolderIcon from "material-ui-icons/Folder";
 import ArrowBackIcon from "material-ui-icons/ArrowBack";
-/* eslint-enable no-unused-vars */
 
 export default (props: Object): React.createElement => {
   const listItems: Array<React.createElement> = props.list.map((metadata: {

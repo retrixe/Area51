@@ -5,7 +5,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-/* eslint-disable no-unused-vars */
 // Importing Material UI components below.
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Paper from "material-ui/Paper";
@@ -15,8 +14,6 @@ import Typography from "material-ui/Typography";
 
 // Importing Area51 components.
 import Folder from "./components/Folder";
-
-/* eslint-enable no-unused-vars */
 
 // Final class.
 class App extends React.Component<void, {}, void> {
@@ -41,7 +38,7 @@ class App extends React.Component<void, {}, void> {
       <MuiThemeProvider>
         <div>
           <AppBar style={{ position: "relative" }}>
-            <Toolbar><Typography type="title" colorInherit>Area51</Typography></Toolbar>
+            <Toolbar><Typography type="title" color="inherit">Area51</Typography></Toolbar>
           </AppBar>
           <Paper elevation={4} style={this.paperStyle} square>
             <Folder />
