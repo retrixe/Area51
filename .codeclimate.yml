@@ -1,0 +1,33 @@
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+    strings:
+    - TODO
+    - FIXME
+    - HACK
+    - BUG
+    - eslint-disable-next-line
+  markdownlint:
+    enabled: true
+  nodesecurity:
+    enabled: true
+  stylelint:
+    enabled: true
+
+ratings:
+  paths:
+  - "**.js"
+  - "**.md"
+  - "**.css"
+  - "**.less"
+  - "**.scss"
+
+exclude_paths:
+- tests/**/*

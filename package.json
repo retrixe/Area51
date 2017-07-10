@@ -6,8 +6,9 @@
   "scripts": {
     "start": "meteor run",
     "build": "next build",
-    "lint": "flow check && eslint .",
-    "test": "ava",
+    "lint": "flow check && eslint . && stylelint \"**/*.less\" --fix",
+    "test": "nyc ava",
+    "report-coverage": "nyc report --reporter=lcov && codecov",
     "test-nyan": "ava --tap | tap-nyan"
   },
   "engines": {
@@ -15,35 +16,38 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "material-ui": "1.0.0-alpha.19",
-    "material-ui-icons": "^1.0.0-alpha.3",
+    "material-ui": "1.0.0-alpha.21",
+    "material-ui-icons": "^1.0.0-alpha.19",
     "meteor-node-stubs": "^0.2.11",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "@types/enzyme": "^2.8.0",
-    "@types/material-ui": "^0.17.11",
+    "@types/enzyme": "^2.8.1",
+    "@types/material-ui": "^0.17.15",
     "@types/meteor": "^1.4.2",
-    "@types/react": "^15.0.29",
-    "@types/react-dom": "^15.5.0",
-    "@types/react-test-renderer": "^15.5.0",
-    "ava": "^0.19.1",
+    "@types/react": "^15.0.35",
+    "@types/react-dom": "^15.5.1",
+    "ava": "^0.20.0",
     "babel-eslint": "^7.2.3",
-    "babel-preset-env": "^1.5.2",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "browser-env": "^2.0.31",
-    "enzyme": "^2.8.2",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "5.0.3",
+    "babel-preset-stage-2": "^6.24.1",
+    "browser-env": "^3.1.0",
+    "codecov": "^2.2.0",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-meteor": "^4.0.1",
     "eslint-plugin-react": "^7.1.0",
-    "flow-bin": "^0.48.0",
+    "flow-bin": "^0.49.1",
+    "nyc": "^11.0.3",
     "react-test-renderer": "^15.6.1",
+    "stylelint": "^7.12.0",
+    "stylelint-config-standard": "^16.0.0",
     "tap-nyan": "^1.1.0"
   },
   "ava": {
@@ -51,9 +55,13 @@
       "presets": [
         "react",
         "@ava/stage-4",
-        "stage-0"
-      ]
+        "stage-2"
+      ],
+      "sourceMaps": "inline"
     },
     "concurrency": 5
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }

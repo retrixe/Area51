@@ -15,9 +15,16 @@ jobs:
            yarn
            apt-get update
            apt-get install ocaml libelf-dev -y
+           curl https://install.meteor.com/ | sh
+           meteor --version
      - run:
-         name: Lint code
+         name: Prepare and lint code
          command: |
+           meteor --version
            mkdir -p $CIRCLE_TEST_REPORTS/reports
-           yarn run lint -- --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
-           yarn run test
+           yarn run lint --- --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
+     - run:
+         name: Test code and produce coverage
+         command: |
+           yarn test
+           yarn run report-coverage

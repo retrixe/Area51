@@ -13,6 +13,7 @@
 .*/node_modules/eslint-plugin-jsx-a11y/.*
 .*/node_modules/material-ui/.*flow
 .*/node_modules/jss/lib/plugins/.*flow
+.*/node_modules/stylelint/lib/.*
 
 [include]
 

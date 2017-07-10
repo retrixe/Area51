@@ -1,22 +1,22 @@
 # Area51 (WIP)
 #### Dependencies: [![dependencies Status](https://david-dm.org/ibujs/area51/status.svg?style=flat-square)](https://david-dm.org/ibujs/area51) [![devDependencies Status](https://david-dm.org/ibujs/area51/dev-status.svg?style=flat-square)](https://david-dm.org/ibujs/area51?type=dev)
-#### Recommended node versions: [![node LTS](https://img.shields.io/badge/node%20LTS-6.10.2-brightgreen.svg?style=flat-square)](https://nodejs.org/en/download/) [![node current](https://img.shields.io/badge/node%20current-7.8.0-brightgreen.svg?style=flat-square)](https://nodejs.org/en/download/current/)
+#### Recommended node versions: [![node LTS](https://img.shields.io/badge/node%20LTS-6.11.0-brightgreen.svg?style=flat-square)](https://nodejs.org/en/download/) [![node current](https://img.shields.io/badge/node%20current-8.1.3-brightgreen.svg?style=flat-square)](https://nodejs.org/en/download/current/)
 #### Minimum node version needed: [![node](https://img.shields.io/badge/node-%3E%3D4-brightgreen.svg?style=flat-square)](https://github.com/nodejs/LTS#lts-schedule)
-#### Is the code in master working? Safe to compile? [![CircleCI](https://img.shields.io/circleci/project/github/ibujs/Area51.svg?style=flat-square)](https://circleci.com/gh/ibujs/Area51)
+#### Is the code in master working? Safe to compile? [![CircleCI](https://img.shields.io/circleci/project/github/retrixe/Area51.svg?style=flat-square)](https://circleci.com/gh/retrixe/Area51)
+#### Is the code acclimatized? [![Code Climate](https://img.shields.io/codeclimate/github/retrixe/Area51.svg?style=flat-square)](https://codeclimate.com/github/retrixe/Area51) [![Code Climate](https://img.shields.io/codeclimate/issues/github/retrixe/Area51.svg?style=flat-square)](https://codeclimate.com/github/retrixe/Area51/issues) [![Codecov](https://img.shields.io/codecov/c/github/retrixe/Area51.svg?style=flat-square)](https://codecov.io/gh/retrixe/Area51)
 
 Project Area51, a tiny project to enable access to stored files. Basically, specify a folder to it on your local filesystem, and you'll be able to access it from anywhere, being able to download your files and entering folders. I developed this to bypass my school's website blocking stuff and get quick access to my files and stuff (like fetching random scripts which wreck the system lol). Yes, there is no authentication or uploading files support right now, but I'll add it later :P
 
 This project is based entirely on Meteor (framework for full-stack development), React and ES2017/ESNext JavaScript. Thus it serves as an example for React, Meteor and ES2017+.
 
 # Supported browsers:
-- Chrome 41+
-- Firefox 31 ESR+
-- Opera 28+
-- All releases of Microsoft Edge (gj Microsoft with the ES6+ support)
+- Chrome 51+
+- Firefox 45+
+- Opera 38+
+- Microsoft Edge 14+ (Version shipping with Windows 10 Anniversary Update)
 - Safari 9+
-- iOS 9+
-INTERNET EXPLORER NOT SUPPORTED. Not even IE 11. GO upgrade your browser.
-Please? No. Go mess with .babelrc and compile it from scratch. Blame Microsoft or go use Edge.
+- iOS 9+  
+INTERNET EXPLORER NOT SUPPORTED. Not even IE 11. GO upgrade your browser. Please? No. Go mess with .babelrc and compile it from scratch. Blame Microsoft or go use Edge.
 
 # Installation
 ## Getting started
@@ -45,7 +45,7 @@ Download and install [Node.js](https://nodejs.org) and [Meteor](https://www.mete
 This will start the application and will be accessible at localhost:3000. Any edits you make to the applications will be near-immediately reflected on the display, or will require you to reload the site in case of an issue.
 
 ## Recommended development tools.
-- [ ] Atom with linter-eslint and linter-flow package, or Visual Studio Code with the flowtype and ESLint plugins.
+- [ ] Atom with linter-eslint and linter-flow package, or Visual Studio Code with the FlowType and ESLint plugins.
 - [ ] Node.js v6/v7
 - [ ] Yarn package manager instead of npm
 
@@ -75,6 +75,6 @@ Area51
 ```
 
 ### Coding standards.
-- Everything can be coded in ES6/ES2015, ES7/ES2016 and ES2017, as well as ESNext (inclding stage-0).
+- Everything can be coded in ES6/ES2015, ES7/ES2016 and ES2017, as well as ESNext (including stage-0).
 - Please lint your code with ESLint and type check it with Flow. ESLint follows the airbnb coding standard.
 - Write tests for code you push (well, there aren't any tests right now, so let's encourage them :P)

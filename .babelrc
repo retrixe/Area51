@@ -2,11 +2,14 @@
   "presets": ["react", ["env", {
     "targets": {
       "browsers": [
-        "Firefox > 31",
-        "Chrome > 41"
+        "Firefox >= 45",
+        "Chrome >= 51",
+        "Safari >= 9",
+        "iOS >= 9",
+        "Edge >= 14"
       ],
       "node": 4
     },
     "modules": false
-  }], "stage-0"]
+  }], "stage-2"]
 }

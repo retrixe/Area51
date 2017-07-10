@@ -12,7 +12,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 // Import our ListCreator to test.
 require("babel-register")({
   babelrc: false,
-  presets: ["react", "@ava/stage-4", "stage-0"],
+  presets: ["react", "@ava/stage-4", "stage-2"],
 });
 const ListCreator = require("../imports/ui/ListCreator").default;
 
