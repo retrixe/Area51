@@ -7,6 +7,9 @@ import { Meteor } from "meteor/meteor";
 import fs from "fs";
 import path from "path";
 
+// Import Express. (chill..)
+import express from "express";
+
 // Create the Meteor methods.
 Meteor.methods({
   // This method enables the client to get the contents of any folder.
@@ -48,3 +51,14 @@ Meteor.methods({
     return path.join(...newArray);
   },
 });
+
+// Create our Express app.
+const app = express();
+
+// Listen on / for any requests for files.
+app.get("/", (req, res) => {
+  res.download(req.query.path);
+});
+
+// Listen on 81 (yeh. YEH).
+app.listen(81);

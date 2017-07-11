@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "express": "^4.15.3",
     "material-ui": "1.0.0-alpha.21",
     "material-ui-icons": "^1.0.0-alpha.19",
     "meteor-node-stubs": "^0.2.11",
