@@ -3,24 +3,25 @@
 // Import Meteor :3 and Mongo :3
 import { Meteor } from "meteor/meteor";
 
-// Import fs and path to access the filesystem.
-import fs from "fs";
-import path from "path";
+// Import fs and path to access the filesystem. And mime to get MIMETypes.
+import { readdirSync, /* readFileSync, */ lstatSync } from "fs";
+import { join, sep /* , parse */ } from "path";
 
-// Import Express. (chill..)
-import express from "express";
+// Import Koa (chill, we need it for something Meteor can't handle, lol..)
+// (At least not without doing a lot of work setting up CollectionFS.)
+// import Koa from "koa";
 
 // Create the Meteor methods.
 Meteor.methods({
   // This method enables the client to get the contents of any folder.
   getFolderContents(folder: string): Array<{ name: string, type: string }> {
     // Get folder contents and create initial variables the loop will write to.
-    const folderContents: Array<string> = fs.readdirSync(folder);
+    const folderContents: Array<string> = readdirSync(folder);
     const folderContentsWithTypes = [];
     let i;
     // Define the function to get the type of a directory item.
     const getType = () => {
-      if (fs.lstatSync(`${folder}/${folderContents[i]}`).isDirectory()) {
+      if (lstatSync(`${folder}/${folderContents[i]}`).isDirectory()) {
         return "folder";
       }
       return "file";
@@ -36,11 +37,11 @@ Meteor.methods({
 
   // Pass it some paths and get a combination of those paths.
   joinPaths(...paths): string {
-    return path.join(...paths);
+    return join(...paths);
   },
 
   goUpOneDirectory(pathy: string): string {
-    const pathyArray: Array<string> = pathy.split(path.sep);
+    const pathyArray: Array<string> = pathy.split(sep);
     if (pathyArray[0] === "") {
       pathyArray[0] = "/";
     }
@@ -48,17 +49,20 @@ Meteor.methods({
     for (let x = 0; x < pathyArray.length - 1; x += 1) {
       newArray.push(pathyArray[x]);
     }
-    return path.join(...newArray);
+    return join(...newArray);
   },
 });
 
-// Create our Express app.
-const app = express();
+// Create our Koa app.
+// const app = new Koa();
 
 // Listen on / for any requests for files.
-app.get("/", (req, res) => {
-  res.download(req.query.path);
-});
+/* app.use((ctx) => {
+  const response = ctx.response;
+  const request = ctx.request;
+  response.attachment(parse(request.query.path).base);
+  response.body = readFileSync(request.query.path);
+}); */
 
-// Listen on 81 (yeh. YEH).
-app.listen(81);
+// Listen on port 81 (yeh. YEH.)
+// app.listen(81);

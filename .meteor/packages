@@ -16,5 +16,5 @@ standard-minifier-js@2.1.0    # JS minifier run for production mode
 es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.8.0              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.3            # Server-side component of the `meteor shell` command
-dynamic-import
-less
+dynamic-import@0.1.0          # Runtime support for Meteor 1.5 dynamic import(...) syntax
+less@2.7.9                   # Leaner CSS language

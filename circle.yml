@@ -7,6 +7,7 @@ jobs:
    working_directory: ~/Area51
    docker:
      - image: node:latest
+   parallelism: 4
    steps:
      - checkout
      - run:
@@ -23,7 +24,7 @@ jobs:
            meteor --version --allow-superuser
            mkdir -p $CIRCLE_TEST_REPORTS/reports
            npx eslint . --fix --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
-           npx stylelint \"**/*.less\"
+           npx stylelint **/*.less
      - run:
          name: Test code and produce coverage
          command: |
