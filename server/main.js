@@ -4,12 +4,12 @@
 import { Meteor } from "meteor/meteor";
 
 // Import fs and path to access the filesystem. And mime to get MIMETypes.
-import { readdirSync, /* readFileSync, */ lstatSync } from "fs";
-import { join, sep /* , parse */ } from "path";
+import { readdirSync, readFileSync, lstatSync } from "fs";
+import { join, sep, parse } from "path";
 
 // Import Koa (chill, we need it for something Meteor can't handle, lol..)
 // (At least not without doing a lot of work setting up CollectionFS.)
-// import Koa from "koa";
+import Koa from "koa";
 
 // Create the Meteor methods.
 Meteor.methods({
@@ -54,15 +54,15 @@ Meteor.methods({
 });
 
 // Create our Koa app.
-// const app = new Koa();
+const app = new Koa();
 
 // Listen on / for any requests for files.
-/* app.use((ctx) => {
+app.use((ctx) => {
   const response = ctx.response;
   const request = ctx.request;
   response.attachment(parse(request.query.path).base);
   response.body = readFileSync(request.query.path);
-}); */
+});
 
 // Listen on port 81 (yeh. YEH.)
 // app.listen(81);
