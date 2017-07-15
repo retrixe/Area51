@@ -16,6 +16,9 @@ engines:
     - eslint-disable-next-line
   markdownlint:
     enabled: true
+    checks:
+      MD013:
+        enabled: false
   stylelint:
     enabled: true
 
