@@ -8,8 +8,10 @@
             "type": "node",
             "request": "attach",
             "name": "Attach to Meteor",
-            "processId": "${command:PickProcess}",
-            "port": 5858
+            "port": 9229,
+            "restart": true,
+            "sourceMaps": true,
+            "protocol": "inspector"
         },
         {
             "type": "chrome",
