@@ -25,8 +25,3 @@ jobs:
            mkdir -p $CIRCLE_TEST_REPORTS/reports
            npx eslint . --fix --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
            npx stylelint **/*.less
-     - run:
-         name: Test code and produce coverage
-         command: |
-           yarn test
-           yarn run report-coverage

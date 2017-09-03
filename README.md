@@ -12,7 +12,7 @@
 
 #### Is the code in master working? Safe to compile? [![CircleCI](https://img.shields.io/circleci/project/github/retrixe/Area51.svg?style=flat-square)](https://circleci.com/gh/retrixe/Area51)
 
-#### Is the code acclimatized? [![Code Climate](https://img.shields.io/codeclimate/github/retrixe/Area51.svg?style=flat-square)](https://codeclimate.com/github/retrixe/Area51) [![Code Climate](https://img.shields.io/codeclimate/issues/github/retrixe/Area51.svg?style=flat-square)](https://codeclimate.com/github/retrixe/Area51/issues) [![Codecov](https://img.shields.io/codecov/c/github/retrixe/Area51.svg?style=flat-square)](https://codecov.io/gh/retrixe/Area51)
+#### Is the code acclimatized? [![Code Climate](https://img.shields.io/codeclimate/github/retrixe/Area51.svg?style=flat-square)](https://codeclimate.com/github/retrixe/Area51) [![Code Climate](https://img.shields.io/codeclimate/issues/github/retrixe/Area51.svg?style=flat-square)](https://codeclimate.com/github/retrixe/Area51/issues)
 
 Project Area51, a tiny project to enable access to stored files. Basically, specify a folder to it on your local filesystem, and you'll be able to access it from anywhere, being able to download your files and entering folders. I developed this to bypass my school's website blocking stuff and get quick access to my files and stuff (like fetching random scripts which wreck the system lol). Yes, there is no authentication or uploading files support right now, but I'll add it later :P
 

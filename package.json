@@ -6,62 +6,41 @@
   "scripts": {
     "start": "meteor run",
     "build": "meteor bundle",
-    "lint": "flow check && eslint . && stylelint \"**/*.less\" --fix",
-    "test": "nyc ava",
-    "report-coverage": "nyc report --reporter=lcov && codecov",
-    "test-nyan": "ava --tap | tap-nyan"
+    "lint": "flow check && eslint . && stylelint \"**/*.less\" --fix"
   },
   "engines": {
     "node": ">=4"
   },
   "dependencies": {
-    "babel-runtime": "^6.25.0",
-    "koa": "^2.3.0",
-    "material-ui": "1.0.0-alpha.21",
-    "material-ui-icons": "^1.0.0-alpha.19",
+    "babel-runtime": "^6.26.0",
+    "material-ui": "1.0.0-beta.8",
+    "material-ui-icons": "^1.0.0-beta.5",
     "meteor-node-stubs": "^0.2.11",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.0.0-beta.5",
+    "react-dom": "^16.0.0-beta.5"
   },
   "devDependencies": {
-    "@types/enzyme": "^2.8.5",
-    "@types/koa": "^2.0.39",
-    "@types/material-ui": "^0.17.22",
-    "@types/meteor": "^1.4.4",
-    "@types/react": "^16.0.2",
-    "@types/react-dom": "^15.5.2",
-    "ava": "^0.21.0",
+    "@types/material-ui": "^0.18.0",
+    "@types/meteor": "^1.4.5",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "browser-env": "^3.1.2",
-    "codecov": "^2.3.0",
-    "enzyme": "^2.9.1",
-    "eslint": "^4.4.1",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint": "^4.6.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.35.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-meteor": "^4.1.4",
-    "eslint-plugin-react": "^7.2.0",
-    "flow-bin": "^0.52.0",
-    "nyc": "^11.1.0",
-    "react-test-renderer": "^15.6.1",
+    "eslint-plugin-meteor": "^4.1.6",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.54.0",
     "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0",
-    "tap-nyan": "^1.1.0"
-  },
-  "ava": {
-    "babel": {
-      "presets": [
-        "react",
-        "@ava/stage-4",
-        "stage-2"
-      ],
-      "sourceMaps": "inline"
-    },
-    "concurrency": 5
+    "stylelint-config-standard": "^17.0.0"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
