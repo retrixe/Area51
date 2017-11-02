@@ -1,5 +1,6 @@
 // @flow
 /* eslint-env node */
+/* global Restivus */
 // Import Meteor :3 and Mongo :3
 import { Meteor } from 'meteor/meteor'
 
@@ -46,5 +47,27 @@ Meteor.methods({
       newArray.push(pathyArray[x])
     }
     return join(...newArray)
+  }
+})
+
+// Create a Restivus API.
+// flow-disable-next-line
+const Api = new Restivus({
+  prettyJson: true
+})
+
+Api.addRoute('/:_filePath', {
+  get () {
+    // var file = __dirname + '/upload-folder/dramaticpenguin.MOV';
+
+    // var filename = path.basename(file);
+    // var mimetype = mime.lookup(file);
+
+    // Set em' headers.
+    // this.response.setHeader('Content-disposition', 'attachment; filename=' + filename)
+    // this.response.setHeader('Content-type', mimetype)
+
+    // var filestream = fs.createReadStream(file);
+    // filestream.pipe(res);
   }
 })

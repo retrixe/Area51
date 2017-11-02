@@ -49,4 +49,5 @@ class App extends React.Component<{}, State> {
   }
 }
 
+// flow-disable-next-line
 ReactDOM.render(<App />, document.getElementById('main'))

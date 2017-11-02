@@ -10,11 +10,11 @@
 .*/.meteor/local/plugin-cache/.*
 
 # Following packages to be ignored due to type errors. Wait for material-ui to hit stable.
-.*/node_modules/eslint-plugin-jsx-a11y/.*
 .*/node_modules/material-ui/.*flow
-.*/node_modules/jss/.*flow
-.*/node_modules/stylelint/lib/.*
-.*/node_modules/react-scrollbar-size/node_modules/.*
+# .*/node_modules/stylelint/lib/.*
+
+# Nested node_modules not to be checked.
+.*/node_modules/*/node_modules/.*
 
 [include]
 

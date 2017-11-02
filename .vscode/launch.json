@@ -19,8 +19,8 @@
             "name": "Launch Chrome",
             "url": "localhost:3000",
             // Remove the // in the next lines to be able to use alternative chrome-based browsers by modifying "runtimeExecutable"
-            "webRoot": "${workspaceRoot}"//,
-            //"runtimeExecutable": "chrome"
+            //"runtimeExecutable": "chrome",
+            "webRoot": "${workspaceRoot}"
         },
         {
             "type": "chrome",
