@@ -5,8 +5,9 @@
 import { Meteor } from 'meteor/meteor'
 
 // Import fs and path to access the filesystem. And mime to get MIMETypes.
-import { readdirSync, lstatSync } from 'fs'
-import { join, sep } from 'path'
+import { readdirSync, lstatSync, readFileSync } from 'fs'
+import { join, sep, basename } from 'path'
+import { lookup } from 'mime'
 
 // Create the Meteor methods.
 Meteor.methods({
@@ -23,7 +24,7 @@ Meteor.methods({
       }
       return 'file'
     }
-    // Start the loop.
+    // Start the loop to push folderContents.
     for (i = 0; i < folderContents.length; i += 1) {
       // Push objects to folderContentsWithTypes.
       folderContentsWithTypes.push({ name: folderContents[i], type: getType() })
@@ -56,18 +57,24 @@ const Api = new Restivus({
   prettyJson: true
 })
 
-Api.addRoute('/:_filePath', {
+Api.addRoute('/file/:_filePath', {
   get () {
-    // var file = __dirname + '/upload-folder/dramaticpenguin.MOV';
-
-    // var filename = path.basename(file);
-    // var mimetype = mime.lookup(file);
+    // Get basename.
+    const filename = basename(this.urlParams._filePath)
+    const mimetype = lookup(this.urlParams._filePath)
 
     // Set em' headers.
-    // this.response.setHeader('Content-disposition', 'attachment; filename=' + filename)
-    // this.response.setHeader('Content-type', mimetype)
+    this.response.writeHead({
+      // Filename.
+      'Content-disposition': `attachment; filename=${filename}`,
+      // Type of file.
+      'Content-type': mimetype
+    })
 
-    // var filestream = fs.createReadStream(file);
-    // filestream.pipe(res);
+    // Read the file and write data to response to client.
+    const file = readFileSync(this.urlParams._filePath)
+    this.response.write(file)
+    // this.done() is quite self-explanatory.
+    this.done()
   }
 })

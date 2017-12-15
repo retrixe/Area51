@@ -11,10 +11,6 @@
 
 # Following packages to be ignored due to type errors. Wait for material-ui to hit stable.
 .*/node_modules/material-ui/.*flow
-# .*/node_modules/stylelint/lib/.*
-
-# Nested node_modules not to be checked.
-.*/node_modules/*/node_modules/.*
 
 [include]
 

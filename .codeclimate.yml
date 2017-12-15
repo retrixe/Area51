@@ -29,6 +29,3 @@ ratings:
   - "**.css"
   - "**.less"
   - "**.scss"
-
-exclude_paths:
-- tests/**/*
