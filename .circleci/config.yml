@@ -1,0 +1,39 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+workflows:
+  build:
+    jobs:
+      - build
+
+jobs:
+  build:
+    working_directory: ~/Area51
+    docker:
+      - image: node:latest
+    parallelism: 4
+    steps:
+      - checkout
+      - run:
+          name: Update Yarn
+          command: 'sudo npm install -g yarn'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./.yarn
+      - run:
+          name: Build the app
+          command: yarn build
+      - run:
+          name: Lint the code
+          command: |
+            mkdir -p reports
+            yarn lint --format junit --output-file reports/eslint.xml
+      - store_test_results:
+          path: test-results.xml
+

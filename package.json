@@ -1,50 +1,67 @@
 {
-  "name": "Area51",
-  "version": "1.0.0-beta.1",
+  "name": "area51",
+  "version": "1.0.0-beta.2",
+  "description": "A tiny project to enable access to stored files.",
+  "main": "server/index.js",
+  "repository": "https://github.com/retrixe/Area51",
+  "author": "Ibrahim Ansari <ansari.ibrahim1@gmail.com>",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "start": "meteor run",
-    "build": "meteor bundle",
-    "lint": "flow check && eslint . && stylelint \"**/*.less\"",
-    "debug": "meteor debug"
+    "start": "node .",
+    "build": "webpack",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "dev": "concurrently \"npm:dev-*\"",
+    "dev-client": "webpack --watch --env NODE_ENV=development",
+    "dev-server": "nodemon -w server -w package.json -w config.json -e js,ts,mjs,json --exec node --inspect ."
   },
-  "engines": {
-    "node": ">=4"
+  "nodemonConfig": {
+    "env": {
+      "NODE_ENV": "development"
+    }
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "bcrypt": "^1.0.3",
-    "material-ui": "^1.0.0-beta.23",
-    "material-ui-icons": "^1.0.0-beta.17",
-    "meteor-node-stubs": "^0.3.2",
-    "mime": "^2.0.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "@koa/router": "^10.0.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "isomorphic-unfetch": "^3.1.0",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-send": "^5.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "ssh2": "^0.8.9"
   },
   "devDependencies": {
-    "@types/material-ui": "^0.18.5",
-    "@types/meteor": "^1.4.12",
-    "@types/react": "^16.0.30",
-    "@types/react-dom": "^16.0.3",
-    "babel-eslint": "^8.0.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.13.1",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-config-standard-react": "^5.0.0",
-    "eslint-plugin-flowtype": "^2.40.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-meteor": "^4.1.4",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-react": "^7.5.1",
-    "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.61.0",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^18.0.0"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard"
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/register": "^7.12.1",
+    "@types/koa": "^2.11.6",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "babel-loader": "^8.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^6.1.1",
+    "concurrently": "^5.3.0",
+    "core-js": "^3.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "html-webpack-plugin": "next",
+    "nodemon": "^2.0.6",
+    "regenerator-runtime": "^0.13.7",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
   }
 }

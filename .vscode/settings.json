@@ -1,4 +1,8 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-    "javascript.validate.enable": false
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true,
+    "dist/": true
+  },
+  "eslint.nodePath": ".yarn/sdks"
 }
