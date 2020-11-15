@@ -2,20 +2,26 @@
   "name": "area51",
   "version": "1.0.0-beta.2",
   "description": "A tiny project to enable access to stored files.",
-  "main": "server/index.js",
+  "main": "out/index.js",
   "repository": "https://github.com/retrixe/Area51",
   "author": "Ibrahim Ansari <ansari.ibrahim1@gmail.com>",
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "start": "node .",
-    "build": "webpack",
+    "start": "node -r source-map-support/register .",
+    "build": "babel src -d out -s && webpack",
     "lint": "eslint . --ext .js,.ts,.tsx",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-client": "webpack --watch --env NODE_ENV=development",
-    "dev-server": "nodemon -w server -w package.json -w config.json -e js,ts,mjs,json --exec node --inspect ."
+    "dev-server": "nodemon --exec \"babel src -d out -s && node -r source-map-support/register --inspect .\""
   },
   "nodemonConfig": {
+    "watch": [
+      "src",
+      "package.json",
+      "config.json"
+    ],
+    "ext": "js,ts,mjs,json",
     "env": {
       "NODE_ENV": "development"
     }
@@ -32,14 +38,15 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "source-map-support": "^0.5.19",
     "ssh2": "^0.8.9"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
-    "@babel/register": "^7.12.1",
     "@types/koa": "^2.11.6",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",

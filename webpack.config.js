@@ -38,7 +38,7 @@ const isDev = env => (
 )
 
 module.exports = env => ({
-  entry: './client/index.js',
+  entry: './src/client/index.js',
   mode: isDev(env) ? 'development' : 'production',
   devtool: isDev(env) ? 'inline-source-map' : undefined,
   output: {

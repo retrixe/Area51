@@ -52,7 +52,10 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/server/index.js"
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["node"],
+      "preLaunchTask": "yarn: build for development",
+      "program": "${workspaceFolder}/out/index.js"
     },
     {
       "type": "node",

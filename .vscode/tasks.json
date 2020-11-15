@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "yarn: build",
+			"detail": "babel src --out-dir out && webpack",
+			"command": ["yarn", "build"]
+		},
+		{
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "yarn: build for development",
+			"detail": "babel src --out-dir out && webpack --env NODE_ENV=development",
+			"command": ["yarn", "build", "--env", "NODE_ENV=development"]
+		}
+	]
+}

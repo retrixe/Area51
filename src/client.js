@@ -1,38 +1,37 @@
+import React from 'react'
+import Files from './client/files'
+import Login from './client/login'
+import theme from './client/theme'
 const fs = require('fs')
 const path = require('path')
 const send = require('koa-send')
 const Router = require('@koa/router') // eslint-disable-line no-unused-vars
-const { jsx } = require('react/jsx-runtime')
 const ReactDOMServer = require('react-dom/server')
-const { access, readFile } = require('fs/promises')
-const { StaticRouter } = require('react-router-dom')
+const { access, readFile } = require('fs').promises
+const { StaticRouter, Switch, Route } = require('react-router-dom')
 const { ServerStyleSheets, ThemeProvider } = require('@material-ui/core/styles')
 const config = require('../config.json')
-require('@babel/register')({ // TODO: Maybe we should build a server bundle.
-  presets: ['@babel/preset-react'], plugins: ['@babel/plugin-transform-modules-commonjs']
-})
+
+// Set NODE_ENV, else Material-UI generates classes in dev mode, causing client and server mismatch.
+if (process.env.NODE_ENV !== 'development') process.env.NODE_ENV = 'production'
 
 const ssr = async (url, initialFiles) => {
-  let Files, Login
-  // Enables reload without restart (but not hot-reload yet :( ).
-  if (process.env.NODE_ENV === 'development') {
-    delete require.cache[require.resolve('../client/theme')]
-    delete require.cache[require.resolve('../client/layout')]
-    delete require.cache[require.resolve('../client/files')]
-    delete require.cache[require.resolve('../client/login')]
-  } else process.env.NODE_ENV = 'production'
-  // Set NODE_ENV, else Material-UI generates classes in dev mode, causing client and server mismatch.
-  if (url.startsWith('/files')) Files = require('../client/files').default
-  else Login = require('../client/login').default
-  const theme = require('../client/theme').default
-
+  // Do a server-side render.
   const sheets = new ServerStyleSheets()
-  const element = jsx(ThemeProvider, {
-    theme,
-    children: jsx(StaticRouter, { children: jsx(Files || Login, { initialFiles }), location: url })
-  })
+  const element = (
+    <ThemeProvider theme={theme}>
+      <StaticRouter location={url}>
+        <Switch>
+          <Route path='/files/:path*'><Files initialFiles={initialFiles} /></Route>
+          <Route path='/'><Login /></Route>
+        </Switch>
+      </StaticRouter>
+    </ThemeProvider>
+  )
   const renderStr = ReactDOMServer.renderToString(sheets.collect(element))
   const css = sheets.toString()
+
+  // Read file and begin injection.
   const html = await readFile(path.join(__dirname, '..', 'dist', 'index.html'), { encoding: 'utf8' })
   const ssrHtml = html.replace('<div id="app"></div>', `<div id="app">${renderStr}</div>`)
     .replace('<style id="jss-server-side"></style>', `<style id="jss-server-side">${css}</style>`)
@@ -83,7 +82,7 @@ module.exports = (router, tokens) => {
   router.get('/:file?', async ctx => {
     // Determine what file to send.
     let file = !ctx.params.file || ctx.params.file === '/' ? 'index.html' : ctx.params.file
-    const folder = file === 'icon.png' ? 'client' : 'dist'
+    const folder = file === 'icon.png' ? 'src' : 'dist'
     try {
       await access(path.join(__dirname, '..', folder, file), fs.constants.F_OK)
     } catch (e) { file = 'index.html' }
