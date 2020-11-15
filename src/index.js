@@ -1,12 +1,12 @@
-const fs = require('fs')
-const Koa = require('koa')
-const path = require('path')
-const send = require('koa-send')
-const crypto = require('crypto')
-const Router = require('@koa/router')
-const bodyParser = require('koa-bodyparser')
-const serveClient = require('./client')
-const config = require('../config.json')
+import fs from 'fs'
+import Koa from 'koa'
+import path from 'path'
+import send from 'koa-send'
+import crypto from 'crypto'
+import Router from '@koa/router'
+import bodyParser from 'koa-bodyparser'
+import serveClient from './client'
+import config from '../config.json'
 
 // Create a Koa server.
 const app = new Koa()

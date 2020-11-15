@@ -1,16 +1,16 @@
+import fs from 'fs'
+import path from 'path'
 import React from 'react'
+import send from 'koa-send'
+import Router from '@koa/router' // eslint-disable-line no-unused-vars
 import Files from './client/files'
 import Login from './client/login'
 import theme from './client/theme'
-const fs = require('fs')
-const path = require('path')
-const send = require('koa-send')
-const Router = require('@koa/router') // eslint-disable-line no-unused-vars
-const ReactDOMServer = require('react-dom/server')
-const { access, readFile } = require('fs').promises
-const { StaticRouter, Switch, Route } = require('react-router-dom')
-const { ServerStyleSheets, ThemeProvider } = require('@material-ui/core/styles')
-const config = require('../config.json')
+import ReactDOMServer from 'react-dom/server'
+import { StaticRouter, Switch, Route } from 'react-router-dom'
+import { ServerStyleSheets, ThemeProvider } from '@material-ui/core/styles'
+import config from '../config.json'
+const { access, readFile } = fs.promises
 
 // Set NODE_ENV, else Material-UI generates classes in dev mode, causing client and server mismatch.
 if (process.env.NODE_ENV !== 'development') process.env.NODE_ENV = 'production'

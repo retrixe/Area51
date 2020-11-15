@@ -43,33 +43,39 @@ const Files = (props) => {
     else if (b.folder && !a.folder) return 1
     else return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1 // They are never equal.
   }
+  const oneUp = path && path !== '/' ? path.substring(0, path.lastIndexOf('/')) || '' : ''
 
   return (
     <Layout>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {files && (
         <List>
-            {files.sort(sortAlgorithm).map(file => {
-              if (file.file) {
-                return (
-                  <a
-                    style={{ textDecoration: 'none', color: 'black' }}
-                    key={file.name} href={`/api/file/${fileReqPath}${file.name}`}
-                  >
-                    <FileItem name={file.name} icon={<FileIcon />} />
-                  </a>
-                )
-              } else if (file.folder) {
-                return (
-                  <Link
-                    style={{ textDecoration: 'none', color: 'black' }}
-                    key={file.name} to={`/files/${fileReqPath}${file.name}`}
-                  >
-                    <FileItem name={file.name} icon={<FolderIcon />} />
-                  </Link>
-                )
-              } else return <FileItem name={file.name} />
-            })}
+          {path && path !== '/' && (
+            <Link style={{ textDecoration: 'none', color: 'black' }} to={`/files/${oneUp}`}>
+              <FileItem name={'..'} />
+            </Link>
+          )}
+          {files.sort(sortAlgorithm).map(file => {
+            if (file.file) {
+              return (
+                <a
+                  style={{ textDecoration: 'none', color: 'black' }}
+                  key={file.name} href={`/api/file/${fileReqPath}${file.name}`}
+                >
+                  <FileItem name={file.name} icon={<FileIcon />} />
+                </a>
+              )
+            } else if (file.folder) {
+              return (
+                <Link
+                  style={{ textDecoration: 'none', color: 'black' }}
+                  key={file.name} to={`/files/${fileReqPath}${file.name}`}
+                >
+                  <FileItem name={file.name} icon={<FolderIcon />} />
+                </Link>
+              )
+            } else return <FileItem name={file.name} />
+          })}
         </List>
       )}
     </Layout>

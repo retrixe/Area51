@@ -16,16 +16,13 @@ jobs:
       - run:
           name: Checkout the project
           command: git clone https://github.com/retrixe/Area51.git .
-      - run:
-          name: Update Yarn
-          command: 'sudo npm install -g yarn'
       - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./.yarn
       - run:
